@@ -5,7 +5,8 @@ Python Script to monitor RAM usage in Remote Computer.
 
 ### It depends on psutil (https://pypi.org/project/psutil/)
 
-### For remote use, use cat and SSH.
+### For remote use, use cat and SSH as follows:
+#### cat hello.py | ssh user@192.168.1.101 python - arg1 arg2 arg3
 
 ### Quick Description
 
