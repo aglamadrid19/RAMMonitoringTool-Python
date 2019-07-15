@@ -6,7 +6,7 @@
 # then we will send an email with a Running Processes Report (sorted).
 
 # Dependencies
-# While looking to diferent way to accomplish our goal I decided to use the ***psutil*** library
+# While looking to diferent ways to accomplished our goal I decided to use the ***psutil*** library
 # This library is being actively developed, and it supports the following OSs 
 # Linux # Windows # macOS # FreeBSD, OpenBSD, NetBSD # Sun Solaris # AIX /// 32-bit and 64-bit
 # Python versions are 2.6, 2.7 and 3.4+
@@ -55,11 +55,14 @@ def sendEmail(SmtpUsername, SmtpPassword, RAMUsage):
     return "Email has been sent!"
 
 def mainFlow():
-    # Let get the SMTP credentials
+    # Lets get the SMTP credentials
     getSMTPUsername = input("Please type the Username of your SMTP server: ")
     getSMTPPassword = getpass()
 
+    # Calling checkRAM
     ramUsage = checkRAM()
+
+    # Set your limit here, mine is 90%
     while ramUsage < 90:
         print("RAM is: {}%".format(ramUsage))
         ramUsage = checkRAM()
